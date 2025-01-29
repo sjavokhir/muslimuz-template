@@ -113,7 +113,7 @@ internal fun App() = AppTheme {
                                 painter = painterResource(Res.drawable.ic_appstore),
                                 contentDescription = null,
                                 modifier = Modifier.clickable {
-                                    uriHandler.openUri("https://t.me/MuslimSupportBot")
+                                    uriHandler.openUri("https://apps.apple.com/us/app/muslim-uz-namoz-azon-duolar/id6739873570")
                                 }
                             )
 
@@ -134,7 +134,7 @@ internal fun App() = AppTheme {
                         Image(
                             painter = painterResource(Res.drawable.image_frame),
                             contentDescription = null,
-                            modifier = Modifier.scale(scale = 0.9f),
+                            modifier = Modifier.scale(scale = 0.8f),
                             contentScale = ContentScale.FillWidth
                         )
                     }
@@ -143,14 +143,47 @@ internal fun App() = AppTheme {
                 Box(
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text(
-                        text = "© 2019-2025 MUSLIM APPS. Barcha huquqlar himoyalangan.",
+                    Column(
                         modifier = Modifier.align(Alignment.Center),
-                        style = MaterialTheme.typography.bodyLarge,
-                        fontFamily = FontFamily(Font(Res.font.regular)),
-                        fontSize = 15.sp,
-                        color = Color.White,
-                    )
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Text(
+                            text = "© 2019-2025 MUSLIM APPS. Barcha huquqlar himoyalangan.",
+                            style = MaterialTheme.typography.bodyLarge,
+                            fontFamily = FontFamily(Font(Res.font.regular)),
+                            fontSize = 15.sp,
+                            color = Color.White,
+                        )
+
+                        Row(
+                            modifier = Modifier.padding(top = 8.dp),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        ) {
+                            Text(
+                                text = "Foydalanish shartlari",
+                                modifier = Modifier
+                                    .clickable {
+                                        uriHandler.openUri("https://muslimuzapp.github.io/terms")
+                                    }
+                                    .padding(8.dp),
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontFamily = FontFamily(Font(Res.font.regular)),
+                                color = Color.White,
+                            )
+
+                            Text(
+                                text = "Maxfiylik siyosati",
+                                modifier = Modifier
+                                    .clickable {
+                                        uriHandler.openUri("https://muslimuzapp.github.io/privacy")
+                                    }
+                                    .padding(8.dp),
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontFamily = FontFamily(Font(Res.font.regular)),
+                                color = Color.White,
+                            )
+                        }
+                    }
 
                     TextButton(
                         modifier = Modifier.align(Alignment.CenterEnd),
